@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el Número</title>
+</head>
+<body>
+    <h1>Bienvenido a Adivina el Número</h1>
+    <p>El número secreto es: {{ secret_number }}</p>
+    <form action="/" method="post">
+        <label for="number">Intenta adivinar el número entre 1 y 100:</label>
+        <input type="number" id="number" name="number" min="1" max="100" required>
+        <button type="submit">Adivinar</button>
+    </form>
+    {% if feedback %}
+        <p>{{ feedback }}</p>
+    {% endif %}
+    {% if computer_guess %}
+        <p>La computadora adivinó: {{ computer_guess }}</p>
+    {% endif %}
+</body>
+</html>
+
